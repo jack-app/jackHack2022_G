@@ -20,7 +20,7 @@ public class GoalBehavior : MonoBehaviour
     void OnCollisionEnter(Collision other)
 	{
         if(other.gameObject==player) {
-          SceneManager.LoadScene ("GameClear");
+          SceneManager.LoadScene ("Game");
         }
 	}
 }
