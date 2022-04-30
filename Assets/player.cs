@@ -12,10 +12,11 @@ public class player : MonoBehaviour
     }
 
     // Update is called once per frame
-    const float speed = 0.08f;
+    float speed;
     void Update()
     {
-
+      speed = ((float)(Time.deltaTime))*40.0f;
+      Debug.Log(Time.deltaTime);
       if(Input.GetKey(KeyCode.UpArrow)){
       transform.Translate(0,0,speed);
       }
