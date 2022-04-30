@@ -12,10 +12,10 @@ public class player : MonoBehaviour
     }
 
     // Update is called once per frame
-    const float speed = 0.08f;
+    float speed;
     void Update()
     {
-
+      speed = ((float)(Time.deltaTime))*40.0f;
       if(Input.GetKey(KeyCode.UpArrow)){
       transform.Translate(0,0,speed);
       }
@@ -29,7 +29,7 @@ public class player : MonoBehaviour
         transform.Rotate(0,-0.5f,0);
       }
       if (transform.position.y < -15.0f){
-      SceneManager.LoadScene ("GameOver");
+        SceneManager.LoadScene ("GameOver");
       }
     }
 }
