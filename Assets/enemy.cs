@@ -2,31 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
+
 
 public class enemy : MonoBehaviour
 {
-  public GameObject player;
+    public GameObject player;
+        NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        agent.acceleration=10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,player.transform.position,0.1f);
+        agent.destination = player.transform.position; 
     }
 
 	// Cube.cs
 	// 衝突の瞬間判定
 	void OnCollisionEnter(Collision other)
 	{
-	  SceneManager.LoadScene ("GameOver");
-	}
-
-	// 衝突離脱の判定
-	void OnCollisionExit(Collision other)
-	{
-		Debug.Log (other.gameObject.name + "Exit");
+        if(other.gameObject==player) {
+          SceneManager.LoadScene ("GameOver");
+        }
 	}
 }
