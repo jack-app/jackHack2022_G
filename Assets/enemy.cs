@@ -14,14 +14,14 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,player.transform.position,0.1f);
+        transform.position = Vector3.MoveTowards(transform.position,player.transform.position,0.02f);
     }
 
 	// Cube.cs
 	// 衝突の瞬間判定
 	void OnCollisionEnter(Collision other)
 	{
-	  SceneManager.LoadScene ("GameOver");
+	  //SceneManager.LoadScene ("GameOver");
 	}
 
 	// 衝突離脱の判定
