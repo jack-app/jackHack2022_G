@@ -1,2 +1,2 @@
-# Free AI at api.airforce
-https://discord.gg/AJDsM7jtbq
+# jackHack2022_G
+test eisuke
